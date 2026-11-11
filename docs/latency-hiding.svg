@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 260" width="640" height="260" font-family="Helvetica, Arial, sans-serif" font-size="14">
+  <rect width="640" height="260" fill="#ffffff"/>
+  <text x="20" y="30" font-weight="bold" fill="#1f2328">What the lanes are doing over time</text>
+  <text x="20" y="50" font-size="12" fill="#57606a">Each warp computes for a bit, then waits on a load. Other warps fill the gap.</text>
+
+  <!-- row labels -->
+  <g fill="#1f2328">
+    <text x="20" y="97">1 warp</text>
+    <text x="20" y="147">2 warps</text>
+    <text x="20" y="197">4 warps</text>
+  </g>
+  <g fill="#57606a" font-size="12" text-anchor="end">
+    <text x="620" y="97">25% busy</text>
+    <text x="620" y="147">50% busy</text>
+    <text x="620" y="197">100% busy</text>
+  </g>
+
+  <!-- timeline: 1 unit = 60px, x from 90 to 570 -->
+  <g stroke="#ffffff" stroke-width="2">
+    <!-- 1 warp -->
+    <rect x="90"  y="78" width="60"  height="28" fill="#0969da"/>
+    <rect x="150" y="78" width="180" height="28" fill="#eaeef2"/>
+    <rect x="330" y="78" width="60"  height="28" fill="#0969da"/>
+    <rect x="390" y="78" width="180" height="28" fill="#eaeef2"/>
+    <!-- 2 warps -->
+    <rect x="90"  y="128" width="60"  height="28" fill="#0969da"/>
+    <rect x="150" y="128" width="60"  height="28" fill="#1a7f37"/>
+    <rect x="210" y="128" width="120" height="28" fill="#eaeef2"/>
+    <rect x="330" y="128" width="60"  height="28" fill="#0969da"/>
+    <rect x="390" y="128" width="60"  height="28" fill="#1a7f37"/>
+    <rect x="450" y="128" width="120" height="28" fill="#eaeef2"/>
+    <!-- 4 warps -->
+    <rect x="90"  y="178" width="60" height="28" fill="#0969da"/>
+    <rect x="150" y="178" width="60" height="28" fill="#1a7f37"/>
+    <rect x="210" y="178" width="60" height="28" fill="#8250df"/>
+    <rect x="270" y="178" width="60" height="28" fill="#bf3989"/>
+    <rect x="330" y="178" width="60" height="28" fill="#0969da"/>
+    <rect x="390" y="178" width="60" height="28" fill="#1a7f37"/>
+    <rect x="450" y="178" width="60" height="28" fill="#8250df"/>
+    <rect x="510" y="178" width="60" height="28" fill="#bf3989"/>
+  </g>
+  <g fill="#ffffff" font-size="12" text-anchor="middle" font-weight="bold">
+    <text x="120" y="97">W0</text><text x="360" y="97">W0</text>
+    <text x="120" y="147">W0</text><text x="180" y="147">W1</text><text x="360" y="147">W0</text><text x="420" y="147">W1</text>
+    <text x="120" y="197">W0</text><text x="180" y="197">W1</text><text x="240" y="197">W2</text><text x="300" y="197">W3</text>
+    <text x="360" y="197">W0</text><text x="420" y="197">W1</text><text x="480" y="197">W2</text><text x="540" y="197">W3</text>
+  </g>
+  <g fill="#57606a" font-size="12" text-anchor="middle">
+    <text x="240" y="97">idle: waiting on memory</text>
+    <text x="270" y="147">idle</text>
+  </g>
+
+  <!-- axis -->
+  <path d="M90,222 H570" stroke="#8c959f" stroke-width="1"/>
+  <text x="90" y="242" font-size="12" fill="#57606a">time →</text>
+  <text x="570" y="242" font-size="12" fill="#57606a" text-anchor="end">memory latency = 3× compute time</text>
+</svg>

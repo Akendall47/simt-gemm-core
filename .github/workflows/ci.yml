@@ -1,9 +1,15 @@
+# It builds and runs all tests
 name: ci
+
+# When to run
 on: [push, pull_request]
+
 jobs:
+  # One job called "sim". Steps run in order; if one fails, the job fails.
   sim:
     runs-on: ubuntu-24.04
     steps:
+
       - uses: actions/checkout@v4
       - name: Install Verilator
         run: sudo apt-get update && sudo apt-get install -y verilator
